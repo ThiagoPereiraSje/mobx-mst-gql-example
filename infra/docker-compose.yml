@@ -1,0 +1,16 @@
+version: '3'
+
+volumes:
+  mobx_postgres_data:
+
+services:
+  database:
+    image: 'postgres:13-alpine'
+    ports:
+      - 5432:5432
+    volumes:
+      - mobx_postgres_data:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_USER: directus
+      POSTGRES_PASSWORD: directus
+      POSTGRES_DB: directus
